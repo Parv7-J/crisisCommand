@@ -1,12 +1,23 @@
-# React + Vite
+Crisis Command 🚨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Overview
 
-Currently, two official plugins are available:
+Crisis Command is an advanced disaster management platform designed to connect government agencies, NGOs, medical teams, logistics providers, and volunteers for efficient and coordinated disaster response. The platform enables real-time tracking, AI-powered resource allocation, and seamless multi-agency collaboration to minimize response time and maximize impact.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key Features
 
-## Expanding the ESLint configuration
+✅ Real-Time Disaster Tracking – Stay updated with live reports, satellite feeds, and social media alerts.
+✅ AI-Powered Resource Allocation – Predict relief demands and optimize food, water, medical aid, and shelter distribution.
+✅ Multi-Agency Coordination – Connect Government, NGOs, and Transport Teams for faster response.
+✅ Volunteer Mobilization – Assign and deploy volunteers efficiently for maximum impact.
+✅ Transport & Logistics Optimization – Ensure smooth movement of relief goods and personnel.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tech Stack
+
+Frontend: React (Vite) with Tailwind CSS, Leaflet for maps.
+
+Backend: FastAPI (Python) for API services.
+
+Database: Supabase for authentication & data storage.
+
+Real-Time Communication: WebSockets for live location tracking.
