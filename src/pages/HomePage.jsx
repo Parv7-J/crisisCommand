@@ -29,7 +29,7 @@ const HomePage = () => {
       <section className="p-12 bg-gray-100 text-gray-900">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <img
-            src="/src/assets/lp.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfK7ZKba5Rhu0AVDy3FkfwVpC6fJDdoyjelQ&s"
             alt="Disaster Response"
             className="w-full md:w-1/2 rounded-lg"
           />
