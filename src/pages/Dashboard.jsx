@@ -170,7 +170,7 @@ const DisasterResourceAllocationPredictor = () => {
                   value={formData.disasterType}
                   onChange={handleInputChange}
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 >
                   <option value="">Select disaster type</option>
                   <option value="Flood">Flood</option>
@@ -192,7 +192,7 @@ const DisasterResourceAllocationPredictor = () => {
                   value={formData.location}
                   onChange={handleInputChange}
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 >
                   <option value="">Select location type</option>
                   <option value="Urban">Urban</option>
@@ -212,7 +212,7 @@ const DisasterResourceAllocationPredictor = () => {
                   value={formData.resourceType}
                   onChange={handleInputChange}
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 >
                   <option value="">Select resource type</option>
                   <option value="Food">Food</option>
@@ -237,7 +237,7 @@ const DisasterResourceAllocationPredictor = () => {
                   onChange={handleInputChange}
                   min="0"
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 />
               </div>
 
@@ -252,7 +252,7 @@ const DisasterResourceAllocationPredictor = () => {
                   onChange={handleInputChange}
                   min="0"
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 />
               </div>
 
@@ -267,7 +267,7 @@ const DisasterResourceAllocationPredictor = () => {
                   onChange={handleInputChange}
                   min="0"
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 />
               </div>
 
@@ -280,7 +280,7 @@ const DisasterResourceAllocationPredictor = () => {
                   value={formData.allocationStatus}
                   onChange={handleInputChange}
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 >
                   <option value="">Select allocation status</option>
                   <option value="Pending">Pending</option>
@@ -299,7 +299,7 @@ const DisasterResourceAllocationPredictor = () => {
                   value={formData.transportationMode}
                   onChange={handleInputChange}
                   required
-                  className="text-gray-900 bg-white"
+                  className="text-gray-900 bg-white border border-gray-300 rounded-md"
                 >
                   <option value="">Select transportation mode</option>
                   <option value="Road">Road</option>

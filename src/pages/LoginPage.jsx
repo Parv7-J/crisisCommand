@@ -45,7 +45,7 @@ const LoginPage = () => {
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
         {activeTab === "volunteer" ? (
-          <form className="space-y-4">
+          <form onSubmit={() => navigate("/dashboard")} className="space-y-4">
             <input
               type="email"
               placeholder="Email"
@@ -79,7 +79,7 @@ const LoginPage = () => {
             </p>
           </form>
         ) : (
-          <form className="space-y-4">
+          <form onSubmit={() => navigate("/dashboard")} className="space-y-4">
             <input
               type="text"
               placeholder="Department ID"
