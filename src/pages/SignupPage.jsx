@@ -8,7 +8,7 @@ const SignupPage = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="text-center">
         <AuthForm isSignUp={true} />
-        <p className="mt-4">
+        <p className="mt-4 text-gray-900">
           Already have an account?{" "}
           <button
             onClick={() => navigate("/login")}

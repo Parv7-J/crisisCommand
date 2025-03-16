@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../services/supabaseClient";
-import bgImage from "../assets/react.svg";
 
 const LoginPage = () => {
   const [activeTab, setActiveTab] = useState("volunteer"); // "volunteer" or "department"
@@ -15,7 +14,9 @@ const LoginPage = () => {
   return (
     <div
       className="relative flex items-center justify-center min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgImage})` }}
+      style={{
+        backgroundImage: `url('https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2018/08/rescue-workers-kerala-1534592624.jpg')`,
+      }}
     >
       <div className="bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl w-full max-w-md backdrop-blur-md">
         <div className="flex justify-around mb-6 border-b pb-2">
@@ -48,7 +49,7 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 text-gray-900 bg-white"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -56,7 +57,7 @@ const LoginPage = () => {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 text-gray-900 bg-white"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -82,7 +83,7 @@ const LoginPage = () => {
             <input
               type="text"
               placeholder="Department ID"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 text-gray-900 bg-white"
               value={deptId}
               onChange={(e) => setDeptId(e.target.value)}
               required
@@ -90,7 +91,7 @@ const LoginPage = () => {
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400 text-gray-900 bg-white"
               value={deptPassword}
               onChange={(e) => setDeptPassword(e.target.value)}
               required
