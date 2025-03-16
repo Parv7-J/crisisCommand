@@ -31,7 +31,7 @@ const AuthForm = ({ isSignUp }) => {
       alert("Signup successful! Please check your email for confirmation.");
       navigate("/login"); // Redirect to login
     } else {
-      // Login flow
+      //Login flow
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -49,7 +49,7 @@ const AuthForm = ({ isSignUp }) => {
 
   return (
     <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">
+      <h2 className="text-2xl font-bold text-center mb-4 text-gray-900">
         {isSignUp ? "Sign Up" : "Login"}
       </h2>
       {error && <p className="text-red-500 text-center">{error}</p>}
@@ -57,8 +57,8 @@ const AuthForm = ({ isSignUp }) => {
         {isSignUp && (
           <input
             type="text"
-            placeholder="Full Name"
-            className="w-full px-4 py-2 border rounded-md"
+            placeholder="Your Name"
+            className="w-full px-4 py-2 border rounded-md text-gray-900 bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -67,7 +67,7 @@ const AuthForm = ({ isSignUp }) => {
         <input
           type="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded-md"
+          className="w-full px-4 py-2 border rounded-md text-gray-900 bg-white"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -75,7 +75,7 @@ const AuthForm = ({ isSignUp }) => {
         <input
           type="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded-md"
+          className="w-full px-4 py-2 border rounded-md text-gray-900 bg-white"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

@@ -1,8 +1,15 @@
+import { BrowserRouter as Router } from "react-router-dom";
+import MainPage from "./pages/MainPage";
 import AppRouter from "./routes/AppRouter";
-import { supabase } from "./services/supabaseClient";
 
 function App() {
-  return <AppRouter />;
+  return (
+    <Router>
+      <MainPage>
+        <AppRouter />
+      </MainPage>
+    </Router>
+  );
 }
 
 export default App;
