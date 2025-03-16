@@ -16,7 +16,7 @@ Tech Stack
 
 Frontend: React (Vite) with Tailwind CSS, Leaflet for maps.
 
-Backend: FastAPI (Python) for API services.
+Backend: Flask(Python) for API services.
 
 Database: Supabase for authentication & data storage.
 
