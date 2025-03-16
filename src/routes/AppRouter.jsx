@@ -10,7 +10,9 @@ import NGODashboard from "../pages/NGODashboard";
 import MedicalDashboard from "../pages/MedicalDashboard";
 import LogisticsDashboard from "../pages/LogisticsDashboard";
 import LoginPage from "../pages/LoginPage";
+import SignupPage from "../pages/SignupPage";
 import HomePage from "../pages/HomePage";
+import ContactPage from "../pages/ContactPage";
 
 const ProtectedRoute = ({ element, role }) => {
   const user = getUser();
@@ -26,6 +28,8 @@ const AppRouter = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route
           path="/government"
           element={

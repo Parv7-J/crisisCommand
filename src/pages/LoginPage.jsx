@@ -1,65 +1,114 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../services/supabaseClient";
+import bgImage from "../assets/react.svg";
 
 const LoginPage = () => {
-  const [id, setId] = useState("");
+  const [activeTab, setActiveTab] = useState("volunteer"); // "volunteer" or "department"
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [deptId, setDeptId] = useState("");
+  const [deptPassword, setDeptPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setError(""); // Clear previous errors
-
-    try {
-      const response = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem("user", JSON.stringify(data)); // Store session
-        navigate(`/${data.role}`); // Redirect based on user role
-      } else {
-        setError(data.message || "Invalid credentials");
-      }
-    } catch (error) {
-      setError(`Server error. Please try again. ${error}`);
-    }
-  };
-
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        {error && <p className="text-red-500 text-center">{error}</p>}
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Government/NGO ID"
-            className="w-full px-4 py-2 border rounded-md"
-            value={id}
-            onChange={(e) => setId(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full px-4 py-2 border rounded-md"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+    <div
+      className="relative flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="bg-white bg-opacity-90 p-8 rounded-xl shadow-2xl w-full max-w-md backdrop-blur-md">
+        <div className="flex justify-around mb-6 border-b pb-2">
           <button
-            type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
+            className={`px-6 py-3 text-lg font-semibold rounded-lg transition ${
+              activeTab === "volunteer"
+                ? "bg-blue-600 text-white shadow-md"
+                : "text-gray-600 hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("volunteer")}
           >
-            Login
+            Volunteer Login
           </button>
-        </form>
+          <button
+            className={`px-6 py-3 text-lg font-semibold rounded-lg transition ${
+              activeTab === "department"
+                ? "bg-blue-600 text-white shadow-md"
+                : "text-gray-600 hover:bg-gray-200"
+            }`}
+            onClick={() => setActiveTab("department")}
+          >
+            Department Login
+          </button>
+        </div>
+
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
+        {activeTab === "volunteer" ? (
+          <form className="space-y-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-bold shadow-md"
+            >
+              Login
+            </button>
+            <p className="text-center mt-2 text-gray-600">
+              New here?{" "}
+              <button
+                onClick={() => navigate("/signup")}
+                className="text-blue-600 hover:underline"
+              >
+                Sign Up
+              </button>
+            </p>
+          </form>
+        ) : (
+          <form className="space-y-4">
+            <input
+              type="text"
+              placeholder="Department ID"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              value={deptId}
+              onChange={(e) => setDeptId(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+              value={deptPassword}
+              onChange={(e) => setDeptPassword(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-bold shadow-md"
+            >
+              Login
+            </button>
+            <p className="text-center mt-2 text-gray-600">
+              No department login?{" "}
+              <a href="/contact" className="text-blue-600 hover:underline">
+                Request Registration
+              </a>
+            </p>
+          </form>
+        )}
       </div>
     </div>
   );
